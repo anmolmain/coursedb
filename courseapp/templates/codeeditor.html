@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Runner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .code-section {
+            width: 45%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #codeInput {
+            height: 300px;
+            resize: none;
+        }
+
+        #codeOutput {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="firstDiv row p-5">
+        <div class="code-section col-12">
+            <h2>JavaScript Code</h2>
+            <textarea id="codeInput" cols="" style="width: 100%;" placeholder="Enter your JavaScript code here and it will run automatically you type in"></textarea>
+        </div>
+
+        <div class="code-section col-12">
+            <h2>Output</h2>
+            <div id="codeOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        // Override console.log to capture output
+        (function () {
+            var oldLog = console.log;
+            console.log = function (message) {
+                var outputDiv = document.getElementById('codeOutput');
+                outputDiv.innerHTML += '<div>' + message + '</div>';
+                oldLog.apply(console, arguments);
+            };
+        })();
+
+        // Function to execute the JavaScript code
+        function runCode() {
+            var code = document.getElementById('codeInput').value;
+            try {
+                // Clear previous output
+                document.getElementById('codeOutput').innerHTML = '';
+
+                // Run the code
+                eval(code);
+            } catch (error) {
+                // Display error if any
+                document.getElementById('codeOutput').innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+
+        // Run code initially and listen for input changes
+        runCode();
+        document.getElementById('codeInput').addEventListener('input', runCode);
+    </script>
+
+<footer class="footer-1 bg-primary text-white py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <h5>About Us</h5>
+                <p>We provide cheatsheets and live paid training to enhance your learning experience.</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5>Contact Us</h5>
+                <p>Email: contact@coursemap.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5>Location</h5>
+                <p>123 Main Street</p>
+                <p>City, Country</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer bg-primary text-white text-center py-3">
+    <div class="container">
+        <span class="text-white">Course Map &copy; 2024 - Providing cheatsheets and live paid training.</span>
+    </div>
+</footer>
+</body>
+
+</html>
+{% endblock %}

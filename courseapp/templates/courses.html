@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Topics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .card {
+            background-color: rgba(174, 221, 248, 0.322);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .courseImg {
+            margin: auto;
+        }
+
+        .card-body img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .card-text {
+            text-align: justify;
+        }
+
+        .btn {
+            margin-top: auto;
+        }
+
+        .card {
+            width: 90vw;
+            display: flex;
+            flex-direction: row;
+            padding: 10%;
+        }
+
+        .card-title {
+            text-align: center;
+        }
+        .mcontainer{
+            width: 100vw;
+            display: flex;
+        }
+        .mcontainer .row{
+            margin: auto;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+      <div class="mcontainer">
+        <div class="row">
+            <div class="col-md-6 ">
+                <h1 class="text-center mb-4 exec" style="width: 90vw;">Web Development Topics</h1>
+                <div id="topics-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const webDevelopmentTopics = [
+    {
+        topic: 'css',
+        description: 'CSS (Cascading Style Sheets) is a stylesheet language used for describing the presentation of a document written in HTML. It controls the layout, appearance, and style of web pages. CSS allows developers to apply colors, fonts, spacing, and other visual properties to HTML elements. With CSS, developers can create responsive and visually appealing designs that enhance the user experience. CSS provides a powerful set of features, including selectors, properties, and values, that enable precise control over the presentation of web content. By separating content from presentation, CSS makes it easier to maintain and update the design of a website.',
+        url: "https://img.icons8.com/?size=512&id=21278&format=png"
+    },
+    {
+        topic: 'Javascript',
+        description: 'JavaScript is a high-level, interpreted programming language that enables interactive and dynamic functionality on web pages. It allows developers to add behavior to web applications, handle user interactions, manipulate the DOM (Document Object Model), and communicate with servers. JavaScript is widely used for client-side scripting and is essential for building modern, responsive, and interactive web experiences. With JavaScript, developers can create dynamic content, validate forms, create animations, and much more. JavaScript is supported by all major web browsers and is constantly evolving, with new features and updates being introduced regularly.',
+        url: "https://img.icons8.com/?size=512&id=108784&format=png"
+    },
+    {
+        topic: 'Bootstrap',
+        description: 'Bootstrap is a popular CSS framework that provides pre-designed templates, components, and utilities to create responsive and mobile-first web pages quickly and efficiently. It includes CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components. Bootstrap\'s grid system and responsive design features make it easy to create layouts that adapt to various screen sizes and devices. With Bootstrap, developers can build professional-looking websites with minimal effort, saving time and resources. Bootstrap is open-source and actively maintained by a community of developers, ensuring compatibility, security, and ongoing support for web projects.',
+        url: "https://img.icons8.com/?size=512&id=84710&format=png"
+    },
+    {
+        topic: 'React',
+        description: 'React is a JavaScript library for building user interfaces. It enables developers to create reusable UI components and build complex, interactive web applications with ease. React uses a declarative and component-based approach, allowing developers to break down the UI into small, reusable pieces. These components can be composed together to create sophisticated user interfaces. React also provides features such as virtual DOM (Document Object Model), state management, and lifecycle methods, which simplify development and improve performance. React is maintained by Facebook and a community of developers, with a vibrant ecosystem of tools and libraries to support web development.',
+        url: "https://img.icons8.com/?size=512&id=123603&format=png"
+    },
+    {
+        topic: 'NodeJs',
+        description: 'Node.js is a runtime environment that allows developers to run JavaScript code server-side. It enables building scalable and high-performance network applications. Node.js uses an event-driven, non-blocking I/O model, which makes it lightweight and efficient, ideal for real-time applications. With Node.js, developers can build web servers, APIs, microservices, and other backend applications using JavaScript. Node.js has a rich ecosystem of modules and packages available through npm (Node Package Manager), which streamlines development and promotes code reuse. Node.js is widely adopted by companies of all sizes, from startups to enterprise organizations, for building modern web applications.',
+        url: "https://img.icons8.com/?size=512&id=54087&format=png"
+    },
+    {
+        topic: 'ExpressJs',
+        description: 'Express.js is a minimalist web application framework for Node.js. It provides a robust set of features for building web and mobile applications quickly and efficiently. Express.js simplifies the process of creating server-side logic, handling HTTP requests and responses, routing, and middleware integration. With Express.js, developers can build RESTful APIs, web applications, and backend services with ease. Express.js is highly extensible, allowing developers to customize and extend its functionality using middleware and plugins. Express.js is widely used in combination with Node.js to build scalable and performant web applications.',
+        url: "https://img.icons8.com/?size=512&id=SDVmtZ6VBGXt&format=png"
+    },
+    {
+        topic: 'MongoDB',
+        description: 'MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents. It offers high performance, scalability, and flexibility for modern applications. MongoDB\'s document model allows developers to store and retrieve data in a natural and intuitive way, making it easy to work with complex data structures. MongoDB supports a rich query language, indexing, and aggregation features, enabling developers to perform advanced data manipulation and analysis. MongoDB is used by companies of all sizes, from startups to Fortune 500 companies, for a wide range of applications, including e-commerce, social media, and content management systems.',
+        url: "https://img.icons8.com/?size=512&id=74402&format=png"
+    },
+];
+
+module.exports = webDevelopmentTopics;
+
+    </script>
+    <script>
+        // Function to generate HTML for each topic card
+        function generateTopicCard(topic) {
+            return `
+        <div class="card">
+          <div class="card-body">
+            <img id=courseImg src="${topic.url}" alt="Topic Image">
+            <div>
+              <h5 class="card-title">${topic.topic}</h5>
+              <button class="btn btn-primary" onclick="showTopicName(${topic.topic})">Learn More</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">${topic.description}</p>
+          </div>
+        </div>
+      `;
+        }
+
+        // Function to display topics in the HTML page
+        function displayTopics(topics) {
+            const topicsContainer = document.getElementById('topics-container');
+            topicsContainer.innerHTML = topics.map(topic => generateTopicCard(topic)).join('');
+        }
+
+        // Function to show the topic name in an alert
+        function showTopicName(topicName) {
+            let str='/'+topicName
+            window.open(str);
+        }
+
+        // Import topics data from the JavaScript file
+        // Ensure this line is executed after the HTML page is loaded
+        window.addEventListener('DOMContentLoaded', () => {
+            displayTopics(webDevelopmentTopics);
+        });
+    </script>
+    
+    <footer class="footer-1 bg-primary text-white py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h5>About Us</h5>
+                    <p>We provide cheatsheets and live paid training to enhance your learning experience.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Email: contact@coursemap.com</p>
+                    <p>Phone: +1234567890</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Location</h5>
+                    <p>123 Main Street</p>
+                    <p>City, Country</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="footer bg-primary text-white text-center py-3">
+        <div class="container">
+            <span class="text-white">Course Map &copy; 2024 - Providing cheatsheets and live paid training.</span>
+        </div>
+    </footer>
+</body>
+
+</html>
+{% endblock %}

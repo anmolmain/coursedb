@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseMap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/index.css">
+
+</head>
+
+<body>
+    <div class="parentDivFirst">
+        <div class="firstDiv">
+            <div class="row">
+                <div class="secOne col-md-6">
+                    <h1>Motivate Yourself to learn a new skill</h1>
+                    <p>Embrace growth, learn new computer skills, empower yourself, and thrive in the digital landscape.
+                        Dedicate,
+                        progress, and achieve.</p>
+                    <button type="button" class="btn btn-primary" onclick="moveToCourses()">Lean more</button>
+                    <script> 
+                        function moveToCourses() {
+                            window.location.href = "/courses/"
+                        }
+                    </script>
+                </div>
+                <div class="sectwo col-md-6">
+                    <img src="https://images.pexels.com/photos/1236421/pexels-photo-1236421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        id="globeImg" alt="" srcset="">
+                    <div class="ColorFulDiv"></div>
+                </div>
+            </div>
+        </div>
+        <div class="LeaderShip row">
+
+            
+            <div class="sectwo col-md-6">
+                <img src="https://images.pexels.com/photos/7414008/pexels-photo-7414008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    id="LeadershipImg" alt="">
+                <div class="ColorFulDiv2"></div>
+            </div>
+            <div class="secOne col-md-6">
+                <h1>Compile and run On The Go</h1>
+                <p>Effortlessly compile and run JavaScript code online with our intuitive web-based compiler, providing
+                    instant feedback and seamless coding experience for all users.</p>
+                <button type="button" onclick="moveToCodeEditor()" class="btn btn-primary">Lean more</button>
+                <script>
+                    function moveToCodeEditor() {
+                        window.location.href = "/codeeditor"
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="firstDiv">
+            <div class="row">
+                <div class="secOne col-md-6">
+                    <h1>Get Innovative ,<br>Get CourseMap</h1>
+                    <p>Embrace creativity, challenge norms, explore possibilities, and drive progress with innovative
+                        thinking that sparks transformative solutions and breakthroughs.</p>
+                    <button type="button" onclick="movetoPrice()" class="btn btn-primary">Lean more</button>
+                </div>
+                <script>
+                    function movetoPrice() {
+                        window.location.href = "/pricing"
+                    }
+                </script>
+                <div class="sectwo col-md-6">
+                    <img src="https://images.pexels.com/photos/13620269/pexels-photo-13620269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        id="globeImg" alt="" srcset="">
+                    <div class="ColorFulDiv"></div>
+                </div>
+            </div>
+        </div>
+        <div class="firstDiv row mt-5">
+            <div class="col-12 exec">
+                <h1>Executive Program in Live classroom training - Launching soon</h1>
+            </div>
+            <div class="col-md-6">Unlock your potential with our upcoming Executive Program in Live Classroom Training
+                at CourseMap. Designed to elevate your professional skills and propel your career to new heights, our
+                Executive Program offers a transformative learning experience like no other. Whether you're a seasoned
+                executive looking to sharpen your leadership acumen or an aspiring professional aiming to enhance your
+                expertise, our comprehensive curriculum caters to diverse skill levels and industries. With a focus on
+                practical insights,real-world scenarios,and interactive sessions led by industry experts, this program
+                equips you with the knowledge, tools, and strategies needed to thrive in today's dynamic business
+                landscape.
+
+                .</div>
+            <div class="floatingDiv col-md-6">
+                <p>Experience the power of immersive learning as we bring together a community of like-minded
+                    individuals committed to continuous growth and success. Our live classroom environment fosters
+                    collaboration, networking, and peer-to-peer learning opportunities, enabling you to gain valuable
+                    insights from fellow participants and build meaningful connections that extend beyond the classroom.
+                    Stay ahead of the curve and stay relevant in your field with CourseMap's Executive Program. Embrace
+                    the future of professional development and embark on a journey of lifelong learning. Stay tuned for
+                    the official launch and join us as we redefine executive education for the modern world.
+                </p>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 exec">
+                    <h1>Check out our Speciallizations</h1>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="/assets/courses.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Courses Section</h5>
+                            <p class="card-text">Elevate learning. Discover expert-curated courses for every skill
+                                level.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="/assets/business.png" class="card-img-top" alt="Image 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Tips</h5>
+                            <p class="card-text">CourseMap: Navigate Your Way to Selling Success - Business
+                                Tips.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="/assets/live.png" class="card-img-top" alt="Image 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Live Training</h5>
+                            <p class="card-text">Unlock Expertise: Course Selling Made Simple, Live Training Included.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="/assets/education.png" class="card-img-top" alt="Image 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Other features</h5>
+                            <p class="card-text">CourseVault: Simplified Course Selling Platform
+                                with Advanced Features.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-1 bg-primary text-white py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <h5>About Us</h5>
+                        <p>We provide cheatsheets and live paid training to enhance your learning experience.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h5>Contact Us</h5>
+                        <p>Email: contact@coursemap.com</p>
+                        <p>Phone: +1234567890</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h5>Location</h5>
+                        <p>123 Main Street</p>
+                        <p>City, Country</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <footer class="footer bg-primary text-white text-center py-3">
+            <div class="container">
+                <span class="text-white">Course Map &copy; 2024 - Providing cheatsheets and live paid training.</span>
+            </div>
+        </footer>
+    </div>
+
+    {% endblock %}

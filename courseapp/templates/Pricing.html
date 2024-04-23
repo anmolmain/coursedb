@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Map - Live Batches Pricing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .pricing-table {
+            margin-top: 50px;
+        }
+
+        .pricing-column {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-column:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-column h3 {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .pricing-column p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .pricing-column .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .pricing-column ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .pricing-column ul li {
+            margin-bottom: 15px;
+            color: #888;
+        }
+
+        .btn-enroll {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-enroll:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+       <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="pricing-table">
+                    <div class="pricing-column">
+                        <h3>Basic</h3>
+                        <p>Get access to basic features</p>
+                        <div class="price">Rs 490/month</div>
+                        <ul>
+                            <li>Access to live batches</li>
+                            <li>Weekly assignments</li>
+                            <li>Email support</li>
+                            <li>Access to course forum</li>
+                            <li>Course completion certificate</li>
+                            <li>Basic progress tracking</li>
+                            <li>Access to course materials</li>
+                            <li>Mobile app access</li>
+                            <li>Monthly Q&A sessions</li>
+                            <li>Discussion boards</li>
+                        </ul>
+                        <button class="btn-enroll">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing-table">
+                    <div class="pricing-column">
+                        <h3>Pro</h3>
+                        <p>Unlock advanced features</p>
+                        <div class="price">Rs 990/month</div>
+                        <ul>
+                            <li>Access to live batches</li>
+                            <li>Weekly assignments with feedback</li>
+                            <li>Email & phone support</li>
+                            <li>Exclusive webinars</li>
+                            <li>Advanced progress tracking</li>
+                            <li>Priority enrollment for new courses</li>
+                            <li>Access to premium course materials</li>
+                            <li>One-on-one mentoring sessions</li>
+                            <li>Access to course recordings</li>
+                            <li>Customizable learning paths</li>
+                        </ul>
+                        <button class="btn-enroll">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing-table">
+                    <div class="pricing-column">
+                        <h3>Premium</h3>
+                        <p>All-inclusive package</p>
+                        <div class="price">Rs 1990/month</div>
+                        <ul>
+                            <li>Access to live batches</li>
+                            <li>Unlimited assignments with detailed feedback</li>
+                            <li>24/7 priority support</li>
+                            <li>Personal mentorship</li>
+                            <li>Access to course materials</li>
+                            <li>Advanced analytics & insights</li>
+                            <li>Networking opportunities</li>
+                            <li>Job placement assistance</li>
+                            <li>Access to industry experts</li>
+                            <li>Exclusive events and workshops</li>
+                        </ul>
+                        <button class="btn-enroll">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <footer class="footer-1 bg-primary text-white py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h5>About Us</h5>
+                    <p>We provide cheatsheets and live paid training to enhance your learning experience.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Email: contact@coursemap.com</p>
+                    <p>Phone: +1234567890</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Location</h5>
+                    <p>123 Main Street</p>
+                    <p>City, Country</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="footer bg-primary text-white text-center py-3">
+        <div class="container">
+            <span class="text-white">Course Map &copy; 2024 - Providing cheatsheets and live paid training.</span>
+        </div>
+    </footer>
+</body>
+
+</html>
+{% endblock %}
